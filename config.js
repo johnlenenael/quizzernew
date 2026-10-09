@@ -1,0 +1,4 @@
+window.QUIZ_CONFIG = {
+  SUPABASE_URL: "https://uxytrqnzxsptfmafktny.supabase.co",
+  SUPABASE_ANON_KEY: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InV4eXRycW56eHNwdGZtYWZrdG55Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTAzNzM1MTQsImV4cCI6MjEwNTk0OTUxNH0.46yfgnmpVJy40OCwfcY2lv-IApPplMV1oJMvzvaroRM"
+};
