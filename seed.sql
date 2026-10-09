@@ -64,7 +64,152 @@ Vdc = 2 × 170 / 3.1416 = 340 / 3.1416 ≈ 108.2 V
 P = (1000)(9.81)(10)(50)(0.80)
 P = 4,905,000 × 0.80 = 3,924,000 W ≈ 3.92 MW', 20),
 (25, 'Power Plants', 'medium', 'A 100 MW plant generates 438,000 MWh in a year (8760 hours). What is its capacity factor?', '["25%","50%","75%","100%"]'::jsonb, 1, 'Maximum possible energy = 100 MW × 8760 h = 876,000 MWh
-Capacity factor = actual / maximum = 438,000 / 876,000 = 0.50 = 50%', 15)
+Capacity factor = actual / maximum = 438,000 / 876,000 = 0.50 = 50%', 15),
+(26, 'DC Circuits', 'easy', 'A 24 V source is connected across an 8 Ω resistor. What is the current?', '["0.33 A","3 A","8 A","192 A"]'::jsonb, 1, 'I = V/R = 24/8 = 3 A', 10),
+(27, 'DC Circuits', 'medium', 'Resistors of 12 Ω and 6 Ω are connected in parallel across a 24 V source. What is the total current drawn?', '["2 A","4 A","6 A","8 A"]'::jsonb, 2, 'I1 = 24/12 = 2 A
+I2 = 24/6 = 4 A
+It = 2 + 4 = 6 A
+(Check: Req = 4 Ω, I = 24/4 = 6 A)', 15),
+(28, 'DC Circuits', 'medium', 'A 100 V source is connected to 20 kΩ and 30 kΩ resistors in series. What is the voltage across the 30 kΩ resistor?', '["40 V","50 V","60 V","75 V"]'::jsonb, 2, 'Voltage divider:
+V = 100 × 30k/(20k + 30k) = 100 × 0.6 = 60 V', 15),
+(29, 'DC Circuits', 'hard', 'A 24 V source has an internal resistance of 4 Ω. A variable load is connected to it. What is the maximum power that can be delivered to the load?', '["18 W","36 W","72 W","144 W"]'::jsonb, 1, 'Max power transfer occurs when RL = Rint = 4 Ω
+I = 24/(4 + 4) = 3 A
+P = I²RL = 3² × 4 = 36 W
+(Formula check: Pmax = V²/4R = 576/16 = 36 W)', 20),
+(30, 'AC Circuits', 'easy', 'What is the period of a 60 Hz sine wave?', '["8.33 ms","16.67 ms","33.3 ms","60 ms"]'::jsonb, 1, 'T = 1/f = 1/60 = 0.01667 s = 16.67 ms', 10),
+(31, 'AC Circuits', 'easy', 'A sinusoidal voltage has a peak value of 170 V. What is its RMS value?', '["85 V","120 V","170 V","240 V"]'::jsonb, 1, 'Vrms = Vm/√2 = 170/1.414 ≈ 120 V', 10),
+(32, 'AC Circuits', 'medium', 'What is the capacitive reactance of a 100 µF capacitor at 60 Hz?', '["2.65 Ω","26.5 Ω","37.7 Ω","265 Ω"]'::jsonb, 1, 'XC = 1/(2πfC)
+XC = 1/(2π × 60 × 100×10⁻⁶) = 1/0.0377 ≈ 26.5 Ω', 15),
+(33, 'AC Circuits', 'medium', 'A load draws 8 kW and 10 kVA. What is its power factor?', '["0.6","0.7","0.8","1.25"]'::jsonb, 2, 'pf = P/S = 8/10 = 0.8', 15),
+(34, 'AC Circuits', 'hard', 'A series RLC circuit has R = 12 Ω, XL = 30 Ω and XC = 14 Ω, connected to 120 V. What is the current?', '["4 A","6 A","8.6 A","10 A"]'::jsonb, 1, 'X = XL − XC = 30 − 14 = 16 Ω
+Z = √(12² + 16²) = √400 = 20 Ω
+I = 120/20 = 6 A', 20),
+(35, 'Electrostatics', 'easy', 'Two point charges of 2 µC and 4 µC are 0.2 m apart in air. What is the force between them? (k = 9×10⁹)', '["0.36 N","1.8 N","3.6 N","18 N"]'::jsonb, 1, 'F = kq1q2/r²
+F = (9×10⁹)(2×10⁻⁶)(4×10⁻⁶)/(0.2)²
+F = 0.072/0.04 = 1.8 N', 10),
+(36, 'Electrostatics', 'easy', 'A 4 µF and a 6 µF capacitor are connected in parallel. What is the equivalent capacitance?', '["2.4 µF","5 µF","10 µF","24 µF"]'::jsonb, 2, 'Parallel capacitors add:
+Ceq = 4 + 6 = 10 µF', 10),
+(37, 'Electrostatics', 'medium', 'A 4 µF and a 6 µF capacitor are connected in series. What is the equivalent capacitance?', '["2.4 µF","5 µF","10 µF","24 µF"]'::jsonb, 0, 'Ceq = (C1 × C2)/(C1 + C2)
+Ceq = (4 × 6)/(4 + 6) = 24/10 = 2.4 µF', 15),
+(38, 'Electrostatics', 'medium', 'How much energy is stored in a 50 µF capacitor charged to 300 V?', '["1.125 J","2.25 J","4.5 J","15 J"]'::jsonb, 1, 'W = ½CV²
+W = ½ × 50×10⁻⁶ × 300² = ½ × 50×10⁻⁶ × 90,000 = 2.25 J', 15),
+(39, 'Electrostatics', 'medium', 'A parallel-plate air capacitor has plate area 0.01 m² and spacing 1 mm. What is its capacitance? (ε0 = 8.854×10⁻¹² F/m)', '["8.85 pF","88.5 pF","885 pF","8.85 nF"]'::jsonb, 1, 'C = ε0A/d
+C = (8.854×10⁻¹²)(0.01)/(1×10⁻³) = 8.854×10⁻¹¹ F ≈ 88.5 pF', 15),
+(40, 'Electromagnetic Induction', 'easy', 'A coil of 200 turns has its flux change by 0.5 mWb in 0.1 s. What is the average induced emf?', '["0.1 V","1 V","10 V","100 V"]'::jsonb, 1, 'e = N ΔΦ/Δt
+e = 200 × (0.5×10⁻³)/0.1 = 200 × 0.005 = 1 V', 10),
+(41, 'Electromagnetic Induction', 'easy', 'According to Lenz''s law, the induced emf is in a direction such that it:', '["aids the change that produces it","opposes the change that produces it","is always clockwise","depends only on the coil resistance"]'::jsonb, 1, 'Lenz''s law: the induced emf (and current) opposes the change in flux that produced it. This is the reason for the negative sign in Faraday''s law.', 10),
+(42, 'Electromagnetic Induction', 'medium', 'A 0.4 m conductor moves at 10 m/s perpendicular to a uniform field of 0.5 T. What emf is induced?', '["0.2 V","2 V","5 V","20 V"]'::jsonb, 1, 'e = B l v = 0.5 × 0.4 × 10 = 2 V', 15),
+(43, 'Electromagnetic Induction', 'medium', 'An inductor of 2 H carries a current of 3 A. How much energy is stored in its magnetic field?', '["6 J","9 J","18 J","3 J"]'::jsonb, 1, 'W = ½LI² = ½ × 2 × 3² = 9 J', 15),
+(44, 'Electromagnetic Induction', 'medium', 'Two coils have L1 = 4 H, L2 = 9 H and a coupling coefficient k = 0.5. What is their mutual inductance?', '["1.5 H","3 H","6 H","18 H"]'::jsonb, 1, 'M = k√(L1L2) = 0.5 × √(4 × 9) = 0.5 × 6 = 3 H', 15),
+(45, 'Electromagnetic Induction', 'hard', 'The current in a 50 mH inductor changes uniformly from 2 A to 6 A in 0.1 s. What is the average induced emf?', '["0.4 V","2 V","4 V","20 V"]'::jsonb, 1, 'e = L ΔI/Δt = 0.05 × (6 − 2)/0.1 = 0.05 × 40 = 2 V', 20),
+(46, 'Magnetic Circuits', 'easy', 'A coil has 500 turns and carries 2 A. What is the magnetomotive force (mmf)?', '["250 AT","1000 AT","1002 AT","2500 AT"]'::jsonb, 1, 'mmf = N × I = 500 × 2 = 1000 ampere-turns', 10),
+(47, 'Magnetic Circuits', 'easy', 'A flux of 0.002 Wb passes through a core of cross-section 0.004 m². What is the flux density?', '["0.5 T","2 T","8 T","0.008 T"]'::jsonb, 0, 'B = Φ/A = 0.002/0.004 = 0.5 T', 10),
+(48, 'Magnetic Circuits', 'medium', 'A core has length 0.5 m, cross-section 0.001 m² and relative permeability 1000. What is its reluctance? (μ0 = 4π×10⁻⁷)', '["3.98×10⁵ AT/Wb","3.98×10⁶ AT/Wb","1.26×10⁻³ AT/Wb","2.5×10⁵ AT/Wb"]'::jsonb, 0, 'S = l/(μ0 μr A)
+S = 0.5/(4π×10⁻⁷ × 1000 × 0.001) = 0.5/1.2566×10⁻⁶ ≈ 3.98×10⁵ AT/Wb', 15),
+(49, 'Magnetic Circuits', 'medium', 'A 400-turn coil carries 1.5 A around a core path 0.3 m long. What is H?', '["200 AT/m","600 AT/m","2000 AT/m","5000 AT/m"]'::jsonb, 2, 'H = NI/l = (400 × 1.5)/0.3 = 600/0.3 = 2000 AT/m', 15),
+(50, 'Magnetic Circuits', 'medium', 'Eddy-current loss in a magnetic core varies approximately as which power of frequency?', '["f","f²","f³","1/f"]'::jsonb, 1, 'Eddy-current loss ∝ Bm² f² t² (t = lamination thickness).
+Hysteresis loss, in contrast, varies linearly with f.', 15),
+(51, 'Magnetic Circuits', 'hard', 'An air gap of 2 mm must carry a flux density of 1 T. Neglecting the iron''s reluctance, what mmf is needed for the gap? (μ0 = 4π×10⁻⁷)', '["796 AT","1592 AT","3183 AT","6366 AT"]'::jsonb, 1, 'H = B/μ0 = 1/(4π×10⁻⁷) ≈ 795,775 AT/m
+mmf = H × lg = 795,775 × 0.002 ≈ 1592 AT', 20),
+(52, 'Instrumentation', 'easy', 'How is an ammeter connected in a circuit, and what should its resistance be?', '["In series; very low","In series; very high","In parallel; very low","In parallel; very high"]'::jsonb, 0, 'An ammeter carries the circuit current, so it goes in series and must have very low resistance so it does not disturb the circuit.', 10),
+(53, 'Instrumentation', 'easy', 'An ideal voltmeter has ___ internal resistance and is connected ___ with the component.', '["infinite; in parallel","zero; in parallel","infinite; in series","zero; in series"]'::jsonb, 0, 'A voltmeter measures potential difference across a component, so it is placed in parallel with very high (ideally infinite) resistance to draw negligible current.', 10),
+(54, 'Instrumentation', 'medium', 'A 1 mA, 50 Ω meter movement is to read 10 mA full scale. What shunt resistance is needed?', '["0.5 Ω","5.56 Ω","50 Ω","450 Ω"]'::jsonb, 1, 'Ish = 10 − 1 = 9 mA
+Rsh = Im Rm / Ish = (1 × 50)/9 = 5.56 Ω', 15),
+(55, 'Instrumentation', 'medium', 'A 1 mA, 50 Ω meter movement is to be a 10 V full-scale voltmeter. What series multiplier resistance is needed?', '["9.95 kΩ","10 kΩ","50 kΩ","100 Ω"]'::jsonb, 0, 'Rtotal = V/Im = 10/0.001 = 10,000 Ω
+Rs = Rtotal − Rm = 10,000 − 50 = 9,950 Ω = 9.95 kΩ', 15),
+(56, 'Instrumentation', 'hard', 'Two wattmeters measure a balanced three-phase load and read 4 kW and 2 kW (both positive). What is the power factor?', '["0.5","0.707","0.866","0.95"]'::jsonb, 2, 'tan φ = √3 (W1 − W2)/(W1 + W2) = √3 × 2/6 = 0.577
+φ = 30°
+pf = cos 30° = 0.866
+(Total power = 6 kW)', 20),
+(57, 'DC Generators', 'easy', 'How many parallel paths does a lap-wound armature have in a 4-pole machine?', '["2","4","6","8"]'::jsonb, 1, 'For lap winding, A = P (number of parallel paths equals number of poles). For wave winding, A = 2 always.', 10),
+(58, 'DC Generators', 'easy', 'A 4-pole lap-wound generator has Z = 400 conductors, flux 0.02 Wb per pole and runs at 1000 rpm. What is the generated emf?', '["100 V","133.3 V","266.7 V","400 V"]'::jsonb, 1, 'E = PΦZN/(60A), with A = P = 4 for lap
+E = (4 × 0.02 × 400 × 1000)/(60 × 4) = 32,000/240 = 133.3 V', 10),
+(59, 'DC Generators', 'medium', 'The same machine (4 poles, Z = 400, Φ = 0.02 Wb, 1000 rpm) is rewound as wave-wound. What is the emf now?', '["133.3 V","200 V","266.7 V","533 V"]'::jsonb, 2, 'Wave winding: A = 2
+E = (4 × 0.02 × 400 × 1000)/(60 × 2) = 32,000/120 = 266.7 V', 15),
+(60, 'DC Generators', 'medium', 'A shunt generator has a terminal voltage of 230 V, load current 50 A, field current 2 A and Ra = 0.1 Ω. What is the generated emf?', '["230 V","232 V","235.2 V","240 V"]'::jsonb, 2, 'Ia = IL + If = 50 + 2 = 52 A
+E = Vt + IaRa = 230 + 52 × 0.1 = 235.2 V', 15),
+(61, 'DC Generators', 'medium', 'A DC generator delivers 10 kW and its total losses are 1 kW. What is its efficiency?', '["88%","90.9%","91.5%","95%"]'::jsonb, 1, 'Input = output + losses = 10 + 1 = 11 kW
+η = 10/11 = 0.909 = 90.9%', 15),
+(62, 'DC Generators', 'hard', 'Because of armature reaction in a DC generator, the magnetic neutral axis shifts:', '["against the direction of rotation","in the direction of rotation","not at all","only if interpoles are fitted"]'::jsonb, 1, 'In a generator the neutral axis shifts in the direction of armature rotation (in a motor, it shifts against rotation). Armature reaction is cross-magnetizing and also slightly demagnetizing.', 20),
+(63, 'DC Motors', 'easy', 'A DC motor on a 240 V supply draws 20 A armature current and Ra = 0.5 Ω. What is the back emf?', '["220 V","230 V","240 V","250 V"]'::jsonb, 1, 'Eb = V − IaRa = 240 − 20 × 0.5 = 230 V', 10),
+(64, 'DC Motors', 'medium', 'The motor above (Eb = 230 V, Ia = 20 A) runs at 1000 rpm. What is the armature torque?', '["21.9 N·m","43.9 N·m","46 N·m","92 N·m"]'::jsonb, 1, 'P = Eb Ia = 230 × 20 = 4600 W
+ω = 2π × 1000/60 = 104.72 rad/s
+T = P/ω = 4600/104.72 ≈ 43.9 N·m', 15),
+(65, 'DC Motors', 'medium', 'Weakening the field flux of a DC shunt motor (adding resistance in the field circuit) causes its speed to:', '["decrease","increase","stay the same","drop to zero"]'::jsonb, 1, 'N ∝ Eb/Φ. With Eb nearly constant, a smaller flux Φ makes the speed rise.', 15),
+(66, 'DC Motors', 'medium', 'A 240 V DC motor has Ra = 0.5 Ω. What would the starting armature current be without a starter?', '["20 A","48 A","240 A","480 A"]'::jsonb, 3, 'At start, Eb = 0
+Ia = V/Ra = 240/0.5 = 480 A
+This is dangerously high, which is why a starter is used.', 15),
+(67, 'DC Motors', 'medium', 'Why should a DC series motor never be started with no load?', '["Its field current is too high","The speed rises dangerously because the flux is very small","It draws no starting current","The brushes would stick"]'::jsonb, 1, 'In a series motor, flux ∝ armature current. At no load the current and flux are very small, so N ∝ 1/Φ rises to a destructive speed (racing).', 15),
+(68, 'DC Motors', 'hard', 'A 220 V shunt motor (Ra = 0.4 Ω) runs at 1000 rpm with Ia = 25 A. The load increases until Ia = 40 A at constant flux. What is the new speed?', '["944 rpm","971 rpm","1000 rpm","1030 rpm"]'::jsonb, 1, 'Eb1 = 220 − 25 × 0.4 = 210 V
+Eb2 = 220 − 40 × 0.4 = 204 V
+N2 = N1 × Eb2/Eb1 = 1000 × 204/210 ≈ 971 rpm', 20),
+(69, 'Alternators', 'easy', 'What frequency does a 4-pole alternator generate at 1800 rpm?', '["30 Hz","50 Hz","60 Hz","120 Hz"]'::jsonb, 2, 'f = PN/120 = (4 × 1800)/120 = 60 Hz', 10),
+(70, 'Alternators', 'easy', 'At what speed must a 6-pole alternator run to generate 50 Hz?', '["500 rpm","750 rpm","1000 rpm","1500 rpm"]'::jsonb, 2, 'N = 120f/P = (120 × 50)/6 = 1000 rpm', 10),
+(71, 'Alternators', 'medium', 'An alternator has a no-load terminal voltage of 460 V and a full-load voltage of 400 V. What is its voltage regulation?', '["12%","13%","15%","18%"]'::jsonb, 2, 'VR = (E − V)/V × 100 = (460 − 400)/400 × 100 = 15%', 15),
+(72, 'Alternators', 'medium', 'A Y-connected alternator has a line voltage of 400 V. What is the phase voltage?', '["133 V","231 V","400 V","693 V"]'::jsonb, 1, 'For Y connection, VL = √3 Vph
+Vph = 400/1.732 ≈ 231 V', 15),
+(73, 'Alternators', 'medium', 'A three-phase alternator delivers 200 A at 11 kV line voltage. What is its kVA output?', '["2.2 MVA","3.81 MVA","6.6 MVA","11 MVA"]'::jsonb, 1, 'S = √3 VL IL = 1.732 × 11,000 × 200 ≈ 3.81 MVA', 15),
+(74, 'Alternators', 'hard', 'A coil is short-pitched by 30 electrical degrees. What is the pitch factor?', '["0.866","0.966","0.985","1.0"]'::jsonb, 1, 'Pitch factor kp = cos(α/2) where α is the short-pitch angle
+kp = cos(15°) = 0.966', 20),
+(75, 'Transformers', 'easy', 'A 2400/240 V transformer has 1200 turns on the primary. How many turns does the secondary have?', '["60","120","1200","12,000"]'::jsonb, 1, 'N2/N1 = V2/V1
+N2 = 1200 × 240/2400 = 120 turns', 10),
+(76, 'Transformers', 'easy', 'A 10 kVA, 2300/230 V transformer. What is the rated secondary current?', '["4.35 A","10 A","43.5 A","435 A"]'::jsonb, 2, 'I2 = S/V2 = 10,000/230 = 43.5 A', 10),
+(77, 'Transformers', 'medium', 'A transformer delivers 50 kW to its load, with a core loss of 0.5 kW and a copper loss of 1 kW. What is its efficiency?', '["96.2%","97.1%","98.0%","99.0%"]'::jsonb, 1, 'Input = 50 + 0.5 + 1 = 51.5 kW
+η = 50/51.5 = 0.9709 = 97.1%', 15),
+(78, 'Transformers', 'medium', 'A transformer operates at maximum efficiency when:', '["copper loss equals iron (core) loss","the load is zero","copper loss is zero","the power factor is zero"]'::jsonb, 0, 'Maximum efficiency occurs when the variable loss (copper, ∝ I²) equals the constant loss (iron).', 15),
+(79, 'Transformers', 'medium', 'The open-circuit test of a transformer is mainly used to determine:', '["copper loss and equivalent impedance","core loss and no-load parameters","efficiency at overload","insulation resistance"]'::jsonb, 1, 'At rated voltage with the secondary open, the input power is essentially the core (iron) loss, and the test gives the magnetizing branch parameters.', 15),
+(80, 'Transformers', 'hard', 'A 10:1 step-down transformer has a 2 Ω load on its secondary. What is this load''s impedance as seen from the primary?', '["0.02 Ω","20 Ω","200 Ω","2000 Ω"]'::jsonb, 2, 'Z'' = a² Z = 10² × 2 = 200 Ω', 20),
+(81, 'Induction Motors', 'easy', 'What is the synchronous speed of a 4-pole, 60 Hz induction motor?', '["900 rpm","1200 rpm","1800 rpm","3600 rpm"]'::jsonb, 2, 'Ns = 120f/P = (120 × 60)/4 = 1800 rpm', 10),
+(82, 'Induction Motors', 'easy', 'An induction motor has Ns = 1500 rpm and runs at 1440 rpm. What is the slip?', '["2%","4%","6%","10%"]'::jsonb, 1, 's = (Ns − N)/Ns = (1500 − 1440)/1500 = 0.04 = 4%', 10),
+(83, 'Induction Motors', 'medium', 'A 50 Hz induction motor runs at 4% slip. What is the rotor current frequency?', '["1 Hz","2 Hz","4 Hz","50 Hz"]'::jsonb, 1, 'fr = s × f = 0.04 × 50 = 2 Hz', 15),
+(84, 'Induction Motors', 'medium', 'A 4-pole, 50 Hz induction motor runs at 3% slip. What is its rotor speed?', '["1455 rpm","1485 rpm","1500 rpm","1545 rpm"]'::jsonb, 0, 'Ns = 120 × 50/4 = 1500 rpm
+N = Ns(1 − s) = 1500 × 0.97 = 1455 rpm', 15),
+(85, 'Induction Motors', 'medium', 'The air-gap power of an induction motor is 10 kW at a slip of 0.03. What is the rotor copper loss?', '["30 W","300 W","3 kW","9.7 kW"]'::jsonb, 1, 'Rotor copper loss = s × Pag = 0.03 × 10,000 = 300 W
+(Mechanical power developed = (1 − s)Pag = 9.7 kW)', 15),
+(86, 'Induction Motors', 'hard', 'If the stator voltage of an induction motor at starting is reduced to 50% of rated, the starting torque becomes what fraction of its full-voltage value?', '["50%","25%","70.7%","12.5%"]'::jsonb, 1, 'Torque ∝ V²
+T'' = (0.5)² T = 0.25 T = 25%', 20),
+(87, 'Synchronous Motors', 'easy', 'Is a synchronous motor inherently self-starting?', '["Yes, at any load","No, it needs a starting method such as damper windings","Yes, but only when over-excited","Only when supplied with DC"]'::jsonb, 1, 'A synchronous motor produces no average torque at standstill. It must be brought near synchronous speed first (e.g. by damper windings as an induction motor, or a pony motor).', 10),
+(88, 'Synchronous Motors', 'medium', 'An over-excited synchronous motor operates at what power factor?', '["Lagging","Unity only","Leading","Zero"]'::jsonb, 2, 'Over-excitation (E > V) makes the motor draw leading current, acting like a capacitor to the supply.', 15),
+(89, 'Synchronous Motors', 'medium', 'A synchronous condenser is:', '["an over-excited synchronous motor running without mechanical load to supply reactive power","an induction generator","a bank of DC capacitors","a transformer with a tap changer"]'::jsonb, 0, 'It is used for power-factor correction and voltage support on transmission systems.', 15),
+(90, 'Synchronous Motors', 'medium', 'At what speed does an 8-pole synchronous motor run on a 60 Hz supply?', '["600 rpm","900 rpm","1200 rpm","1800 rpm"]'::jsonb, 1, 'Ns = 120f/P = (120 × 60)/8 = 900 rpm', 15),
+(91, 'Synchronous Motors', 'medium', 'Hunting in a synchronous motor refers to:', '["oscillation of the rotor about its synchronous position","loss of residual magnetism","overheating of the damper bars","a sudden speed rise above synchronous speed"]'::jsonb, 0, 'Sudden load or supply changes cause the rotor to swing about its steady-state load angle. Damper windings help suppress it.', 15),
+(92, 'Synchronous Motors', 'hard', 'A synchronous motor has per-phase V = 230 V, E = 300 V, Xs = 5 Ω (Ra neglected), and load angle δ = 30°. What is the power developed per phase?', '["3450 W","6900 W","13,800 W","20,700 W"]'::jsonb, 1, 'P = (V E/Xs) sin δ
+P = (230 × 300/5) × sin 30° = 13,800 × 0.5 = 6900 W per phase', 20),
+(93, 'Transmission Lines', 'easy', 'The skin effect in a conductor carrying AC means that:', '["current crowds toward the conductor surface, raising the effective AC resistance","current flows only through the center","voltage drop disappears","DC resistance increases"]'::jsonb, 0, 'At higher frequency or larger conductor size, current density is greatest near the surface, so effective resistance is higher than the DC value.', 10),
+(94, 'Transmission Lines', 'medium', 'A 10 MW, unity-power-factor load is supplied by a three-phase 33 kV line. What is the line current?', '["100 A","175 A","303 A","525 A"]'::jsonb, 1, 'I = P/(√3 VL pf) = 10×10⁶/(1.732 × 33,000 × 1) ≈ 175 A', 15),
+(95, 'Transmission Lines', 'medium', 'A line has a no-load receiving-end voltage of 33 kV and a full-load receiving-end voltage of 30 kV. What is its voltage regulation?', '["9.1%","10%","11%","13%"]'::jsonb, 1, 'VR = (VNL − VFL)/VFL × 100 = (33 − 30)/30 × 100 = 10%', 15),
+(96, 'Transmission Lines', 'medium', 'Why is power transmitted at high voltage?', '["For the same power, the current and I²R loss are reduced","It increases the line current","It makes insulation unnecessary","It raises the system frequency"]'::jsonb, 0, 'P = √3 V I pf. Higher V means lower I for the same power, so I²R losses and voltage drop fall.', 15),
+(97, 'Transmission Lines', 'medium', 'A conductor weighs 1.5 kg/m, the span is 200 m (level supports) and the tension is 2000 kg. What is the sag?', '["1.5 m","3.75 m","7.5 m","15 m"]'::jsonb, 1, 'S = wL²/(8T) = (1.5 × 200²)/(8 × 2000) = 60,000/16,000 = 3.75 m', 15),
+(98, 'Transmission Lines', 'hard', 'The Ferranti effect refers to:', '["the receiving-end voltage rising above the sending-end voltage on a lightly loaded long line","voltage dropping at the receiving end under heavy load","corona discharge at high voltage","current crowding at the conductor surface"]'::jsonb, 0, 'Line charging current flowing through the line inductance raises the receiving-end voltage at no load or light load.', 20),
+(99, 'Faults', 'easy', 'Which type of fault occurs most frequently on overhead transmission lines?', '["Three-phase","Line-to-line","Single line-to-ground","Double line-to-ground"]'::jsonb, 2, 'Roughly 70–80% of transmission-line faults are single line-to-ground faults (e.g. from lightning or contact with trees).', 10),
+(100, 'Faults', 'easy', 'On a 100 MVA base, what is a 50 MVA quantity in per unit?', '["0.2 pu","0.5 pu","2 pu","50 pu"]'::jsonb, 1, 'pu = actual/base = 50/100 = 0.5 pu', 10),
+(101, 'Faults', 'medium', 'A bus has a three-phase short-circuit capacity of 500 MVA at 11 kV. What is the fault current?', '["15.1 kA","26.2 kA","45.5 kA","500 A"]'::jsonb, 1, 'I = S/(√3 V) = 500×10⁶/(1.732 × 11,000) ≈ 26,240 A ≈ 26.2 kA', 15),
+(102, 'Faults', 'medium', 'The Thevenin reactance at a bus is 0.05 pu on a 100 MVA base. What is the short-circuit MVA?', '["500 MVA","1000 MVA","2000 MVA","5000 MVA"]'::jsonb, 2, 'Isc = 1/X = 20 pu
+MVAsc = base MVA/X = 100/0.05 = 2000 MVA', 15),
+(103, 'Faults', 'medium', 'Which type of fault is symmetrical, involving only positive-sequence current?', '["Single line-to-ground","Line-to-line","Double line-to-ground","Three-phase fault"]'::jsonb, 3, 'A three-phase fault is balanced, so it has no negative- or zero-sequence components. All other common faults are unsymmetrical.', 15),
+(104, 'Faults', 'hard', 'A generator reactance is 0.1 pu on a 50 MVA base. What is it on a 100 MVA base at the same voltage?', '["0.05 pu","0.1 pu","0.2 pu","0.4 pu"]'::jsonb, 2, 'Xnew = Xold × (MVAnew/MVAold) = 0.1 × 100/50 = 0.2 pu', 20),
+(105, 'Illumination', 'easy', 'What is the SI unit of luminous flux?', '["Candela","Lux","Lumen","Lambert"]'::jsonb, 2, 'Luminous flux is measured in lumens (lm). Candela is luminous intensity and lux is illuminance (lm/m²).', 10),
+(106, 'Illumination', 'easy', 'One lux is equal to:', '["1 lumen per square metre","1 candela per square metre","1 lumen per candela","1 watt per square metre"]'::jsonb, 0, 'Illuminance: 1 lux = 1 lm/m²', 10),
+(107, 'Illumination', 'medium', 'A total flux of 4800 lm falls uniformly on a surface of 12 m². What is the illuminance?', '["200 lux","400 lux","800 lux","1600 lux"]'::jsonb, 1, 'E = Φ/A = 4800/12 = 400 lux', 15),
+(108, 'Illumination', 'medium', 'A 500 cd point source is 2.5 m directly above a surface. What is the illuminance directly below it?', '["50 lux","80 lux","200 lux","1250 lux"]'::jsonb, 1, 'Inverse-square law: E = I/d² = 500/2.5² = 500/6.25 = 80 lux', 15),
+(109, 'Illumination', 'medium', 'A 20 m² room needs 300 lux. If the combined utilization × maintenance factor is 0.5, what total lamp flux is required?', '["3000 lm","6000 lm","12,000 lm","24,000 lm"]'::jsonb, 2, 'Φ = E × A/(UF × MF) = (300 × 20)/0.5 = 12,000 lm', 15),
+(110, 'Illumination', 'hard', 'A 800 cd source hangs 3 m above a floor. What is the illuminance on the floor at a point 4 m horizontally from the point directly beneath it?', '["12.8 lux","19.2 lux","32 lux","64 lux"]'::jsonb, 1, 'Distance d = √(3² + 4²) = 5 m
+cos θ = h/d = 3/5 = 0.6
+E = I cos θ/d² = 800 × 0.6/25 = 19.2 lux', 20),
+(111, 'Rectifiers & Converters', 'easy', 'A single-phase half-wave rectifier has Vm = 100 V. What is the average output voltage?', '["31.8 V","50 V","63.7 V","70.7 V"]'::jsonb, 0, 'Vdc = Vm/π = 100/3.1416 = 31.8 V', 10),
+(112, 'Rectifiers & Converters', 'easy', 'A single-phase full-wave rectifier has Vm = 100 V. What is the average output voltage?', '["31.8 V","63.7 V","70.7 V","100 V"]'::jsonb, 1, 'Vdc = 2Vm/π = 200/3.1416 = 63.7 V', 10),
+(113, 'Rectifiers & Converters', 'medium', 'What is the output ripple frequency of a single-phase full-wave rectifier on a 60 Hz supply?', '["60 Hz","120 Hz","180 Hz","360 Hz"]'::jsonb, 1, 'A full-wave rectifier produces two pulses per input cycle, so f ripple = 2 × 60 = 120 Hz.', 15),
+(114, 'Rectifiers & Converters', 'medium', 'A buck converter has Vin = 48 V and a duty cycle D = 0.25. What is the output voltage (ideal, continuous conduction)?', '["12 V","24 V","36 V","192 V"]'::jsonb, 0, 'Vo = D × Vin = 0.25 × 48 = 12 V', 15),
+(115, 'Rectifiers & Converters', 'medium', 'A boost converter has Vin = 12 V and D = 0.5. What is the output voltage (ideal)?', '["6 V","12 V","24 V","36 V"]'::jsonb, 2, 'Vo = Vin/(1 − D) = 12/0.5 = 24 V', 15),
+(116, 'Rectifiers & Converters', 'hard', 'A three-phase six-pulse diode bridge rectifier is fed from a 400 V line-to-line supply. What is the approximate average dc output voltage?', '["400 V","510 V","540 V","565 V"]'::jsonb, 2, 'Vdc = (3√2/π) VLL ≈ 1.35 × 400 = 540 V
+(565 V is the peak line voltage, 400√2)', 20),
+(117, 'Power Plants', 'easy', 'A plant has an average load of 60 MW and a peak load of 100 MW. What is its load factor?', '["0.4","0.6","1.0","1.67"]'::jsonb, 1, 'Load factor = average load/peak load = 60/100 = 0.6', 10),
+(118, 'Power Plants', 'easy', 'A consumer has a connected load of 50 kW and a maximum demand of 30 kW. What is the demand factor?', '["0.4","0.6","1.2","1.67"]'::jsonb, 1, 'Demand factor = maximum demand/connected load = 30/50 = 0.6', 10),
+(119, 'Power Plants', 'medium', 'The diversity factor of a group of consumers is always:', '["less than 1","equal to 1","equal to or greater than 1","negative"]'::jsonb, 2, 'Diversity factor = sum of individual maximum demands / maximum demand of the group. Because individual peaks do not coincide, it is ≥ 1.', 15),
+(120, 'Power Plants', 'medium', 'A hydro plant has a head of 40 m and flow of 20 m³/s with an overall efficiency of 85%. What is its electrical output?', '["4.41 MW","6.67 MW","7.85 MW","66.7 MW"]'::jsonb, 1, 'P = ρ g Q H η = 1000 × 9.81 × 20 × 40 × 0.85 = 6,670,800 W ≈ 6.67 MW', 15),
+(121, 'Power Plants', 'medium', 'A thermal plant burns 1 kg of coal (25 MJ/kg) for each kWh generated. What is its overall efficiency?', '["14.4%","25%","36%","50%"]'::jsonb, 0, '1 kWh = 3.6 MJ
+η = 3.6/25 = 0.144 = 14.4%', 15),
+(122, 'Power Plants', 'medium', 'Which material is commonly used for control rods in a nuclear reactor?', '["Cadmium or boron","Graphite","Heavy water","Uranium-238"]'::jsonb, 0, 'Cadmium and boron absorb neutrons strongly, so inserting the rods lowers the reaction rate. Graphite and heavy water act as moderators.', 15)
 on conflict (id) do update set
   topic = excluded.topic, difficulty = excluded.difficulty, question = excluded.question,
   choices = excluded.choices, answer_index = excluded.answer_index,
