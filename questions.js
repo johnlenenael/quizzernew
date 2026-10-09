@@ -401,4 +401,69 @@ window.QUESTIONS = [
     ["14.4%", "25%", "36%", "50%"], 0, "1 kWh = 3.6 MJ\nη = 3.6/25 = 0.144 = 14.4%");
   Q("Power Plants", "medium", "Which material is commonly used for control rods in a nuclear reactor?",
     ["Cadmium or boron", "Graphite", "Heavy water", "Uranium-238"], 0, "Cadmium and boron absorb neutrons strongly, so inserting the rods lowers the reaction rate. Graphite and heavy water act as moderators.");
+
+  // ---- Device Function Numbers (based on IEEE Std C37.2-1991 numbering). Original questions. ----
+  const T = "Device Function Numbers";
+  Q(T, "easy", "Which device function number designates an AC circuit breaker?",
+    ["50", "51", "52", "89"], 2, "Under IEEE C37.2, 52 is the AC circuit breaker.\n50 = instantaneous overcurrent relay, 51 = AC time overcurrent relay, 89 = line switch.");
+  Q(T, "easy", "Which device function number is an undervoltage relay?",
+    ["27", "59", "81", "32"], 0, "27 = undervoltage relay.\n59 = overvoltage, 81 = frequency, 32 = directional power.");
+  Q(T, "easy", "Device 59 is a(n):",
+    ["undervoltage relay", "overvoltage relay", "underfrequency relay", "reverse-power relay"], 1, "59 = overvoltage relay. Its counterpart 27 is the undervoltage relay.");
+  Q(T, "easy", "Device 50 is a(n):",
+    ["instantaneous overcurrent relay", "AC time overcurrent relay", "differential protective relay", "distance relay"], 0, "50 = instantaneous overcurrent relay (no intentional time delay).\n51 = AC time overcurrent, 87 = differential, 21 = distance.");
+  Q(T, "easy", "Device 51 is a(n):",
+    ["instantaneous overcurrent relay", "AC time overcurrent relay", "AC circuit breaker", "AC directional overcurrent relay"], 1, "51 = AC time overcurrent relay (operating time depends on the current magnitude, i.e. inverse-time).\n67 is the directional overcurrent relay.");
+  Q(T, "easy", "Which function number is the differential protective relay?",
+    ["21", "86", "87", "79"], 2, "87 = differential protective relay. It compares currents entering and leaving the protected zone (transformer, bus, generator, line, motor).");
+  Q(T, "easy", "Device 21 is a:",
+    ["directional power relay", "distance relay", "undervoltage relay", "synchronism-check device"], 1, "21 = distance relay. It measures impedance (voltage/current) to the fault and is the standard transmission line protection.");
+  Q(T, "easy", "Which device function number is the AC reclosing relay?",
+    ["86", "82", "79", "25"], 2, "79 = AC reclosing relay. 82 is the DC reclosing relay, 86 is the locking-out relay, 25 is the synchronizing/synchronism-check device.");
+  Q(T, "easy", "Which function number is used for a frequency relay, such as one used in underfrequency load shedding?",
+    ["25", "27", "59", "81"], 3, "81 = frequency relay (over- or underfrequency).\n25 = synchronism check, 27 = undervoltage, 59 = overvoltage.");
+  Q(T, "easy", "A generator breaker may close only when voltage, frequency and phase angle across it are within limits. Which device function number does this supervision?",
+    ["25", "32", "46", "49"], 0, "25 = synchronizing or synchronism-check device.\n32 = directional power, 46 = phase-balance current, 49 = thermal relay.");
+  Q(T, "easy", "Which device is the locking-out relay, which holds the trip and must be reset manually before the breaker can be closed again?",
+    ["94", "86", "74", "62"], 1, "86 = locking-out relay.\n94 = tripping or trip-free relay, 74 = alarm relay, 62 = time-delay stopping or opening relay.");
+  Q(T, "easy", "Which function number is a directional power relay, commonly used for reverse-power (anti-motoring) protection of a generator?",
+    ["32", "40", "46", "78"], 0, "32 = directional power relay.\n40 = field (loss of excitation), 46 = phase-balance current, 78 = out-of-step.");
+  Q(T, "easy", "Which function number is a machine or transformer thermal relay, used for overload (thermal) protection of a motor?",
+    ["24", "49", "37", "47"], 1, "49 = machine or transformer thermal relay.\n24 = volts per hertz, 37 = undercurrent/underpower, 47 = phase-sequence voltage.");
+  Q(T, "easy", "How many standard device function numbers does IEEE C37.2-1991 assign?",
+    ["50", "72", "94", "99"], 2, "C37.2-1991 assigns 94 standard device function numbers (1 to 94). Numbers 95 to 99 are left for specific applications not covered by the standard numbers.");
+  Q(T, "medium", "Transformer sudden-pressure and Buchholz (gas) relays are commonly assigned which function number?",
+    ["49", "63", "87", "26"], 1, "63 = pressure switch (pressure, level or flow switches). Sudden-pressure and Buchholz relays are commonly labelled 63.\n49 = thermal relay, 87 = differential, 26 = apparatus thermal device.");
+  Q(T, "medium", "Device 40 on a synchronous generator protects against:",
+    ["loss of field excitation", "overfluxing (high V/Hz)", "negative-sequence currents", "reverse power"], 0, "40 = field (loss of excitation) relay.\nOverfluxing is device 24, negative-sequence is 46, reverse power is 32.");
+  Q(T, "medium", "A device 46 relay on a generator or motor responds to:",
+    ["phase-balance (negative-sequence) current", "phase-sequence voltage", "frequency deviation", "bearing temperature"], 0, "46 = reverse-phase or phase-balance current relay. Unbalanced currents produce negative-sequence current that heats the rotor.\nThe voltage counterpart is device 47.");
+  Q(T, "medium", "Which device protects a generator or transformer from overexcitation (overfluxing)?",
+    ["81", "24", "27", "59"], 1, "24 = volts per hertz relay. Core flux is proportional to V/f, so high voltage or low frequency overfluxes the core.");
+  Q(T, "medium", "Device 64 is a:",
+    ["ground detector relay", "AC directional overcurrent relay", "pilot-wire receiver relay", "blocking relay"], 0, "64 = ground detector relay, often used on ungrounded systems and DC systems to detect an earth fault.");
+  Q(T, "medium", "Device 67 is a(n):",
+    ["AC directional overcurrent relay", "voltage directional relay", "DC overcurrent relay", "AC time overcurrent relay"], 0, "67 = AC directional overcurrent relay. It operates for overcurrent only when the current flows in the set direction.\n91 = voltage directional relay, 76 = DC overcurrent relay.");
+  Q(T, "medium", "The auxiliary contact 52a of a circuit breaker is:",
+    ["open when the breaker is closed", "closed when the breaker is closed", "closed only when the breaker is open", "a trip-free contact"], 1, "An 'a' contact follows the main device: it is open when the device is open and closed when the device is closed.\nA 'b' contact (52b) is the opposite.");
+  Q(T, "medium", "A circuit breaker is open. Which of its auxiliary contacts are closed?",
+    ["52a only", "52b only", "both 52a and 52b", "neither"], 1, "52a is open when the breaker is open.\n52b is closed when the breaker is open.\nSo only 52b is closed.");
+  Q(T, "medium", "In a designation such as 51N, the suffix N commonly indicates:",
+    ["neutral (residual) connection", "negative sequence", "no time delay", "normally closed"], 0, "In C37.2, the suffix N stands for network or neutral. In relay practice, 51N is a time overcurrent relay connected to neutral/residual current for ground faults.");
+  Q(T, "medium", "Which designation is commonly used for a bus differential relay?",
+    ["87T", "87M", "87B", "87L"], 2, "The suffix gives the protected equipment:\n87B = bus, 87T = transformer, 87G = generator, 87M = motor, 87L = line.");
+  Q(T, "medium", "Which device function number is the tripping or trip-free relay?",
+    ["86", "94", "74", "30"], 1, "94 = tripping or trip-free relay.\n86 = locking-out relay, 74 = alarm relay, 30 = annunciator relay.");
+  Q(T, "medium", "A feeder relay is labelled 50/51. This means it provides:",
+    ["instantaneous and time overcurrent protection in one relay", "distance and overcurrent protection", "undervoltage and overvoltage protection", "synchronism check and reclosing"], 0, "The slash combines functions in one device: 50 = instantaneous overcurrent, 51 = AC time overcurrent.");
+  Q(T, "medium", "Which set pairs every number with the correct function?",
+    ["21 reclosing, 79 distance, 87 differential", "32 directional power, 46 phase-balance current, 59 overvoltage", "50 time overcurrent, 51 instantaneous overcurrent, 52 AC breaker", "27 overvoltage, 81 frequency, 86 lockout"], 1, "Correct: 32 directional power, 46 phase-balance current, 59 overvoltage.\nOthers swap functions: 21 is distance and 79 is reclosing; 50 is instantaneous and 51 is time overcurrent; 27 is undervoltage.");
+  Q(T, "hard", "A relay is labelled 67N. What does it do?",
+    ["Directional overcurrent protection using neutral/ground current", "Undervoltage protection of the neutral", "Negative-sequence differential protection", "Opening of the neutral grounding switch"], 0, "67 = AC directional overcurrent relay and N = neutral (residual) quantity.\nSo 67N trips for ground faults only when the fault current flows in the set direction, which is needed on parallel lines or looped systems.");
+  Q(T, "hard", "Breaker-failure protection is commonly labelled 50BF. When it operates after a breaker fails to clear a fault, it typically:",
+    ["trips the surrounding backup breakers through a lockout (86)", "recloses the failed breaker", "blocks the other relays from tripping", "sends a transfer signal to the load only"], 0, "A breaker-failure scheme starts a timer when a trip is issued and current still flows. When the timer expires it trips all the adjacent breakers that can feed the fault, usually through an 86 lockout, to isolate the failed breaker.\n(50BF is a common industry label built on 50 with a suffix; it is not a separately numbered device in C37.2.)");
+  Q(T, "hard", "Which device is applied together with a distance relay (21) so that it does not trip during a stable power swing?",
+    ["68 (blocking relay, power-swing blocking)", "27 (undervoltage relay)", "46 (phase-balance current relay)", "24 (volts per hertz relay)"], 0, "During a power swing, the apparent impedance can move into the distance relay zones even though there is no fault. A blocking relay (68) detects the slow impedance movement and blocks the 21 tripping.\nOut-of-step (78) is used when the system is actually losing synchronism and must be separated.");
+  Q(T, "hard", "In IEEE C37.2, function numbers 95 to 99 are:",
+    ["reserved for specific applications where no assigned number is suitable", "reserved for DC devices only", "reserved for future IEEE revisions", "reserved for supervisory control (SCADA) devices"], 0, "The standard assigns 1 to 94. Numbers 95 to 99 may be used for a specific application in an individual installation when none of the assigned numbers fits, and the meaning should be stated in that installation's documents.");
 })();
