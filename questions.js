@@ -403,7 +403,7 @@ window.QUESTIONS = [
     ["Cadmium or boron", "Graphite", "Heavy water", "Uranium-238"], 0, "Cadmium and boron absorb neutrons strongly, so inserting the rods lowers the reaction rate. Graphite and heavy water act as moderators.");
 
   // ---- Device Function Numbers (based on IEEE Std C37.2-1991 numbering). Original questions. ----
-  const T = "Device Function Numbers";
+const T = "IEEE Devices";
   Q(T, "easy", "Which device function number designates an AC circuit breaker?",
     ["50", "51", "52", "89"], 2, "Under IEEE C37.2, 52 is the AC circuit breaker.\n50 = instantaneous overcurrent relay, 51 = AC time overcurrent relay, 89 = line switch.");
   Q(T, "easy", "Which device function number is an undervoltage relay?",
